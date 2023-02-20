@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
-    <div class="toggleAside">|||</div>
-    <div class="logo" @click="toggleMenu">logo</div>
+    <div class="toggleAside" @click="toggleMenu">|||</div>
+    <div class="logo">logo</div>
     <ul class="menu">
       <li>menu1</li>
       <li>menu2</li>
@@ -19,7 +19,6 @@ export default {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
-      console.log(menuVisible);
     };
 
     return {toggleMenu};
@@ -35,7 +34,10 @@ $color-chypre: #869558;
   color: $color;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   > .logo {
     max-width: 6em;

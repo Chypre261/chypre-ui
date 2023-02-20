@@ -16,8 +16,9 @@ export default {
 
 <style lang="scss" scoped>
 $color: #007974;
+$color-chypre: #869558;
 .topnav {
-  background: darkseagreen;
+  background: $color-chypre;
   color: $color;
   display: flex;
   padding: 16px;

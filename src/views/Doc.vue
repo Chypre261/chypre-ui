@@ -1,7 +1,14 @@
 <template>
   <TopNav></TopNav>
-  <div>
-    <aside>aside</aside>
+  <div class="content">
+    <aside>
+      <h2>Components</h2>
+      <ol>
+        <li>
+          <router-link to="doc/switch">Switch</router-link>
+        </li>
+      </ol>
+    </aside>
     <main>main</main>
   </div>
 </template>

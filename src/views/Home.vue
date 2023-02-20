@@ -4,8 +4,10 @@
     <div class="banner">
       <h1>Chypre UI</h1>
       <h3>is just for you.</h3>
-      <a>GitHub</a>
-      <a>Get Start</a>
+      <div class="actions">
+        <a href="#">GitHub</a>
+        <router-link to="/doc">Get Start</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -22,5 +24,11 @@ export default {
 <style lang="scss" scoped>
 h1, h3 {
   text-align: center;
+}
+.banner {
+  height: 60vh;
+  > .actions {
+
+  }
 }
 </style>

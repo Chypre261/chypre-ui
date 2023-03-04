@@ -6,7 +6,7 @@
         <h2>Components</h2>
         <ol>
           <li>
-            <router-link to="doc/switch">Switch</router-link>
+            <router-link to="/doc/switch">Switch</router-link>
           </li>
         </ol>
       </aside>

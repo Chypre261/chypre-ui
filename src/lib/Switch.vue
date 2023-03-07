@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked:value}">
+  <button class="cp-switch" @click="toggle" :class="{checked:value}">
     <span></span>
   </button>
 </template>
@@ -21,11 +21,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-$color-chypre: #869558;
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.cp-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -45,11 +44,11 @@ span {
   transition: left 250ms;
 }
 
-button.checked {
+.cp-switch.checked {
   background: #869558;
 }
 
-button.checked > span {
+.cp-switch.checked > span {
   left: calc(100% - #{$h2} - 2px);
 }
 </style>

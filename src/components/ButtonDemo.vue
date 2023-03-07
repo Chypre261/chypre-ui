@@ -1,7 +1,11 @@
 <template>
   <div>
-    button demo:
-    <Button>test button</Button>
+    <Button theme="primary">Primary</Button>
+    <Button theme="link">Link</Button>
+  </div>
+  <div>
+    <Button theme="info">Info</Button>
+    <Button theme="success">Success</Button>
   </div>
 </template>
 
@@ -14,5 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  div {
+    padding-bottom: 12px;
+  }
 </style>

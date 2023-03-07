@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed41ff38-d657-4186-b6a8-9c90cc2ce948" name="Changes" comment="import vue-router">
-      <change afterPath="$PROJECT_DIR$/src/components/SwitchDemo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/chypre-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chypre-ui.iml" afterDir="false" />
+    <list default="true" id="ed41ff38-d657-4186-b6a8-9c90cc2ce948" name="Changes" comment="complete basic frame of my website">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopNav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Doc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Doc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ButtonDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ButtonDemo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Button.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +19,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
+        <option value="Sass File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="switch_components" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -53,6 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -67,7 +70,17 @@
       <option name="presentableId" value="Default" />
       <updated>1676886088599</updated>
       <workItem from="1676886090259" duration="897000" />
-      <workItem from="1676886991500" duration="16710000" />
+      <workItem from="1676886991500" duration="20708000" />
+      <workItem from="1677028618146" duration="596000" />
+      <workItem from="1677251495142" duration="4139000" />
+      <workItem from="1677461978671" duration="29000" />
+      <workItem from="1677494976638" duration="599000" />
+      <workItem from="1677547366539" duration="3349000" />
+      <workItem from="1677577046907" duration="618000" />
+      <workItem from="1677633994939" duration="599000" />
+      <workItem from="1677743573532" duration="638000" />
+      <workItem from="1677928125867" duration="6692000" />
+      <workItem from="1678087960464" duration="13822000" />
     </task>
     <task id="LOCAL-00001" summary="import vue-router">
       <created>1676890582529</created>
@@ -104,7 +117,42 @@
       <option name="project" value="LOCAL" />
       <updated>1676905457703</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="complete basic frame of my website">
+      <created>1676907833153</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676907833153</updated>
+    </task>
+    <task id="LOCAL-00007" summary="shift switch button via click event">
+      <created>1677942221959</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677942221960</updated>
+    </task>
+    <task id="LOCAL-00008" summary="use v-model">
+      <created>1677943348821</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677943348822</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create Button component">
+      <created>1678178380517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678178380517</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adjust scss system">
+      <created>1678196392582</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678196392582</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +164,12 @@
     <MESSAGE value="init aside" />
     <MESSAGE value="set TopNav as responsive" />
     <MESSAGE value="set different menuVisible value for different devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="set different menuVisible value for different devices" />
+    <MESSAGE value="complete basic frame of my website" />
+    <MESSAGE value="shift switch button via click event" />
+    <MESSAGE value="use v-model" />
+    <MESSAGE value="create Button component" />
+    <MESSAGE value="adjust scss system" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust scss system" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

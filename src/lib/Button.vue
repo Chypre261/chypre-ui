@@ -139,7 +139,7 @@ $color-danger: #f14668;
   }
 
   &.cp-round {
-    border-radius: $h / 2;
+    border-radius: calc($h / 2)
   }
 
 

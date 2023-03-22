@@ -1,7 +1,7 @@
 <template>
   <div>
     Default 1:
-    <Dialog v-model:visible="x"></Dialog>
+    <Dialog v-model:visible="x" @update:visible="x = $event"></Dialog>
     <Button @click="toggle">Toggle</Button>
   </div>
 </template>

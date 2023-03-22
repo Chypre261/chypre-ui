@@ -4,7 +4,9 @@
     <div class="cp-dialog-overlay"></div>
     <div class="cp-dialog-wrapper">
       <div class="cp-dialog">
-        <header>title <span class="cp-dialog-close"></span></header>
+        <header>title
+          <span class="cp-dialog-close" @click="close"></span>
+        </header>
         <main>
           <p>context line1</p>
           <p>context line2</p>
@@ -20,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import Button from "./Button.vue";
+import Button from './Button.vue';
 
 export default {
   name: 'Dialog.vue',
@@ -31,8 +33,13 @@ export default {
       default: true
     }
   },
-  setup() {
-
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false);
+    };
+    return {
+      close
+    };
   }
 };
 </script>

@@ -12,8 +12,8 @@
           <p>context line2</p>
         </main>
         <footer>
-          <Button theme="info">OK</Button>
-          <Button theme="primary">Cancel</Button>
+          <Button theme="info" @click="ok">OK</Button>
+          <Button theme="primary" @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -31,14 +31,41 @@ export default {
     visible: {
       type: Boolean,
       default: true
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    ok: {
+      type: Function
+    },
+    cancel: {
+      type: Function
     }
   },
   setup(props, context) {
     const close = () => {
       context.emit('update:visible', false);
     };
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close()
+      }
+    }
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit('cancel');
+      close();
+    };
     return {
-      close
+      close,
+      onClickOverlay,
+      ok,
+      cancel
     };
   }
 };

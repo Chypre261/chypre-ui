@@ -10,7 +10,6 @@ import {computed} from 'vue';
 
 export default {
   name: 'Button.vue',
-  inheritAttrs: false,
   props: {
     theme: {
       type: String,

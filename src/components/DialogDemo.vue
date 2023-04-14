@@ -1,7 +1,10 @@
 <template>
   <div>
     Default 1:
-    <Dialog v-model:visible="x" @update:visible="x = $event"></Dialog>
+    <Dialog v-model:visible="x"
+            :closeOnClickOverlay="false"
+            :ok="f1"
+            :cancel="f2"></Dialog>
     <Button @click="toggle">Toggle</Button>
   </div>
 </template>
@@ -15,13 +18,22 @@ export default {
   name: 'DialogDemo.vue',
   components: {Dialog, Button},
   setup() {
-    const x = ref(true);
+    const x = ref(false);
     const toggle = () => {
       x.value = !x.value;
+      console.log('toggled');
+    };
+    const f1 = () => {
+      // check form
+      // return false
+    };
+    const f2 = () => {
     };
     return {
       x,
-      toggle
+      toggle,
+      f1,
+      f2
     };
   }
 };

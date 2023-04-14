@@ -4,7 +4,14 @@
     <Dialog v-model:visible="x"
             :closeOnClickOverlay="false"
             :ok="f1"
-            :cancel="f2"></Dialog>
+            :cancel="f2">
+      <template v-slot:title>
+        Demo1
+      </template>
+      <template v-slot:content>
+        <p>This is the first demo.</p>
+      </template>
+    </Dialog>
     <Button @click="toggle">Toggle</Button>
   </div>
 </template>
@@ -21,7 +28,6 @@ export default {
     const x = ref(false);
     const toggle = () => {
       x.value = !x.value;
-      console.log('toggled');
     };
     const f1 = () => {
       // check form

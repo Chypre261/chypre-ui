@@ -1,22 +1,23 @@
 <template>
   <template v-if="visible">
-
-    <div class="cp-dialog-overlay"></div>
-    <div class="cp-dialog-wrapper">
-      <div class="cp-dialog">
-        <header>title
-          <span class="cp-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <p>context line1</p>
-          <p>context line2</p>
-        </main>
-        <footer>
-          <Button theme="info" @click="ok">OK</Button>
-          <Button theme="primary" @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="cp-dialog-overlay"></div>
+      <div class="cp-dialog-wrapper">
+        <div class="cp-dialog">
+          <header>
+            <slot name="title"></slot>
+            <span class="cp-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer>
+            <Button theme="info" @click="ok">OK</Button>
+            <Button theme="primary" @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 
 </template>
@@ -41,6 +42,9 @@ export default {
     },
     cancel: {
       type: Function
+    },
+    title: {
+      type: String
     }
   },
   setup(props, context) {
@@ -49,9 +53,9 @@ export default {
     };
     const onClickOverlay = () => {
       if (props.closeOnClickOverlay) {
-        close()
+        close();
       }
-    }
+    };
     const ok = () => {
       if (props.ok?.() !== false) {
         close();

@@ -1,7 +1,7 @@
 <template>
   <template v-if="visible">
     <Teleport to="body">
-      <div class="cp-dialog-overlay"></div>
+      <div class="cp-dialog-overlay" @click="onClickOverlay"></div>
       <div class="cp-dialog-wrapper">
         <div class="cp-dialog">
           <header>
@@ -62,6 +62,7 @@ export default {
       }
     };
     const cancel = () => {
+      props.cancel?.();
       context.emit('cancel');
       close();
     };

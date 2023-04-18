@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed41ff38-d657-4186-b6a8-9c90cc2ce948" name="Changes" comment="complete basic frame of my website">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ButtonDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ButtonDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabsDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabsDemo.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Sass File" />
         <option value="TypeScript File" />
         <option value="Vue Single File Component" />
-        <option value="Sass File" />
       </list>
     </option>
   </component>
@@ -152,7 +150,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678196392582</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="open Dialog with code">
+      <created>1681806077878</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681806077878</updated>
+    </task>
+    <task id="LOCAL-00012" summary="create Tab &amp; Tabs component">
+      <created>1681809071771</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681809071771</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +181,9 @@
     <MESSAGE value="use v-model" />
     <MESSAGE value="create Button component" />
     <MESSAGE value="adjust scss system" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust scss system" />
+    <MESSAGE value="open Dialog with code" />
+    <MESSAGE value="create Tab &amp; Tabs component" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Tab &amp; Tabs component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

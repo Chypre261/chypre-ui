@@ -1,6 +1,7 @@
 <template>
   <div>
-    Tabs
+    <div v-for="(t,index) in titles" :key="index">{{ t }}</div>
+    <component v-for="(c,index) in defaults" :is="c" :key="index"></component>
   </div>
 </template>
 
@@ -8,7 +9,22 @@
 import Tab from './Tab.vue';
 
 export default {
-  name: 'Tabs.vue'
+  name: 'Tabs.vue',
+  setup(props, context) {
+    const defaults = context.slots.default();
+    defaults.forEach((tag) => {
+      if (tag.type !== Tab) {
+        throw new Error('The children of Tabs tags must be Tab tags!');
+      }
+    });
+    const titles = defaults.map((tag) => {
+      return tag.props.title
+    });
+    return {
+      defaults,
+      titles
+    };
+  }
 };
 </script>
 

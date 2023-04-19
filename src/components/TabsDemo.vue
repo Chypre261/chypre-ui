@@ -1,6 +1,6 @@
 <template>
   Tab Demo 1:
-  <Tabs>
+  <Tabs v-model:selected="x">
     <Tab title="Nav 1">Content 1</Tab>
     <Tab title="Nav 2">Content 2</Tab>
   </Tabs>
@@ -9,10 +9,18 @@
 <script lang="ts">
 import Tabs from '../lib/Tabs.vue';
 import Tab from '../lib/Tab.vue';
+import {ref} from 'vue';
 
 export default {
   name: 'TabDemo.vue',
-  components: {Tabs, Tab}
+  components: {Tabs, Tab},
+  setup() {
+    const x=ref('Nav 2')
+
+    return {
+      x
+    }
+  }
 };
 </script>
 

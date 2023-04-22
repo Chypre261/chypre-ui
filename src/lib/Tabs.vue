@@ -5,9 +5,11 @@
            :class="{selected: t===selected}"
            @click="select(t)"
            v-for="(t,index) in titles"
+           :ref="el => {if(el) navItems[index]=el}"
            :key="index">
         {{ t }}
       </div>
+      <div class="cp-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="cp-tabs-content">
       <component class="cp-tabs-content-item" :is="current" :key="current.props.title"/>
@@ -17,7 +19,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {computed} from 'vue';
+import {computed, onMounted, ref} from 'vue';
 
 export default {
   name: 'Tabs.vue',
@@ -27,6 +29,18 @@ export default {
     }
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([]);
+    const indicator = ref<HTMLDivElement>(null)
+    onMounted(()=>{
+
+      const selectedItem = navItems.value.filter((el)=>el.classList.contains('selected'))[0]
+
+      const {width} = selectedItem.getBoundingClientRect()
+
+      indicator.value.style.width =width + 'px'
+      console.log(width)
+    });
+
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -44,11 +58,14 @@ export default {
         return tag.props.title === props.selected;
       });
     });
+
     return {
       defaults,
       titles,
       select,
-      current
+      current,
+      navItems,
+      indicator
     };
   }
 };
@@ -59,14 +76,15 @@ export default {
 $blue: #485fc7;
 $color: #333;
 $border-color: #d9d9d9;
-.cp-tabs {
+div.cp-tabs {
   &-nav {
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
-      padding: 8px 10px;
+      padding: 8px 0px;
       margin: 0 16px;
       cursor: pointer;
 
@@ -78,7 +96,16 @@ $border-color: #d9d9d9;
         color: $blue;
       }
     }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+    }
   }
+
 
   &-content {
     padding: 8px 0;

@@ -5,7 +5,7 @@
            :class="{selected: t===selected}"
            @click="select(t)"
            v-for="(t,index) in titles"
-           :ref="el => {if(el) navItems[index]=el}"
+           :ref="el => {if(t === selected) selectedItem=el}"
            :key="index">
         {{ t }}
       </div>
@@ -29,15 +29,14 @@ export default {
     }
   },
   setup(props, context) {
-    const navItems = ref<HTMLDivElement[]>([]);
     const indicator = ref<HTMLDivElement>(null)
+    const selectedItem = ref<HTMLDivElement>(null);
+
     onMounted(()=>{
 
-      const selectedItem = navItems.value.filter((el)=>el.classList.contains('selected'))[0]
-
-      const {width} = selectedItem.getBoundingClientRect()
-
+      const {width} = selectedItem.value.getBoundingClientRect()
       indicator.value.style.width =width + 'px'
+
       console.log(width)
     });
 
@@ -64,8 +63,8 @@ export default {
       titles,
       select,
       current,
-      navItems,
-      indicator
+      indicator,
+      selectedItem
     };
   }
 };

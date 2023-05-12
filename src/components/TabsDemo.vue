@@ -2,7 +2,7 @@
   Tab Demo 1:
   <Tabs v-model:selected="x">
     <Tab title="Nav 1">Content 1</Tab>
-    <Tab title="Nav 2">Content 2</Tab>
+    <Tab title="Nav 2 (long title)">Content 2</Tab>
   </Tabs>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: 'TabDemo.vue',
   components: {Tabs, Tab},
   setup() {
-    const x=ref('Nav 2')
+    const x=ref('Nav 1')
 
     return {
       x

@@ -1,6 +1,6 @@
 <template>
   <div class="cp-tabs">
-    <div class="cp-tabs-nav">
+    <div class="cp-tabs-nav" ref="container">
       <div class="cp-tabs-nav-item"
            :class="{selected: t===selected}"
            @click="select(t)"
@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {computed, onMounted, ref} from 'vue';
+import {computed, onMounted, onUpdated, ref, watchEffect} from 'vue';
 
 export default {
   name: 'Tabs.vue',
@@ -29,15 +29,22 @@ export default {
     }
   },
   setup(props, context) {
-    const indicator = ref<HTMLDivElement>(null)
+    const indicator = ref<HTMLDivElement>(null);
     const selectedItem = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
 
-    onMounted(()=>{
+    onMounted(() => {
+      watchEffect(() => {
 
-      const {width} = selectedItem.value.getBoundingClientRect()
-      indicator.value.style.width =width + 'px'
+        const {width} = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + 'px';
 
-      console.log(width)
+        const {left: leftContainer} = container.value.getBoundingClientRect();
+        const {left: leftSelectedItem} = selectedItem.value.getBoundingClientRect();
+
+        indicator.value.style.left = leftSelectedItem - leftContainer + 'px';
+
+      });
     });
 
     const defaults = context.slots.default();
@@ -64,7 +71,8 @@ export default {
       select,
       current,
       indicator,
-      selectedItem
+      selectedItem,
+      container
     };
   }
 };
@@ -102,6 +110,7 @@ div.cp-tabs {
       background: $blue;
       left: 0;
       bottom: -1px;
+      transition: all .3s;
     }
   }
 

@@ -1,16 +1,27 @@
 <template>
   <div class="topnav">
     <div class="toggleAside" @click="toggleMenu">|||</div>
-    <div class="logo">logo</div>
+    <div class="logo">
+      <router-link to="/">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-frog"></use>
+        </svg>
+      </router-link>
+    </div>
     <ul class="menu">
-      <li>menu1</li>
-      <li>menu2</li>
+<!--      <li>Sponsor</li>-->
+      <li>
+        <router-link to="/doc/switch">
+          Doc
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
+import '../index.scss';
 
 export default {
   name: 'TopNav.vue',
@@ -29,12 +40,17 @@ export default {
 <style lang="scss" scoped>
 $color: #007974;
 $color-chypre: #869558;
+
+$color-chypre: #f4f3e8; // bg
+$color-primary: #35472d; // theme
+$color-primary-light: #c5eab2; // light
+
 .topnav {
-  background: $color-chypre;
-  color: $color;
+
+  color: $color-primary;
   display: flex;
   padding: 16px;
-  position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -42,6 +58,11 @@ $color-chypre: #869558;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   > .menu {
@@ -53,6 +74,7 @@ $color-chypre: #869558;
       margin: 0 1em;
     }
   }
+
   > .toggleAside {
     display: none;
     width: 24px;

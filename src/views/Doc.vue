@@ -73,7 +73,7 @@ aside {
   width: 150px;
   padding: 16px;
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   padding-top: 70px;
   height: 100%;

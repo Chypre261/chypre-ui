@@ -3,6 +3,18 @@
     <TopNav class="nav"/>
     <div class="content">
       <aside v-if="menuVisible">
+        <h2>Doc</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">Intro</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">Install</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/get-started">Get Started</router-link>
+          </li>
+        </ol>
         <h2>Components</h2>
         <ol>
           <li>
@@ -43,6 +55,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active {
+  text-decoration: underline;
+}
 .layout {
   display: flex;
   flex-direction: column;
